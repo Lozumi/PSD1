@@ -67,11 +67,7 @@ GitHub：[@Lozumi](https://github.com/Lozumi)
 
 ![简中插件](https://s1.lozumi.com/typecho/uploads/2022/09/1289726022.png)
 
-<<<<<<< HEAD
 ### Git配置
-=======
-#### Git配置
->>>>>>> fdd0b990143e5fb1431d47a01994b6920713b23e
 
 1.下载Git | [官网](https://git-scm.com/download/win)
 
@@ -111,7 +107,6 @@ git config --global --unset https.https://github.com.proxy
 
 请参考文章：[网络代理 &amp; Github 加速 &amp; npm 加速 - 简书 (jianshu.com)](https://www.jianshu.com/p/709c6853cc42)。
 
-<<<<<<< HEAD
 # 学习笔记
 
 > Sep.16,2022
@@ -123,17 +118,6 @@ git config --global --unset https.https://github.com.proxy
 ### Chapter.1 开始
 
 #### 1.3 注释简介
-=======
-## 学习笔记
-
-### Sep.16 CPPP Chapter.1
-
-今天开始学习*C++ Primer*（下简称“CPPP”），计划在10月底前阅读并完成习题。
-
-> **Chapter.1 开始**
->
-> 1.3 注释简介
->>>>>>> fdd0b990143e5fb1431d47a01994b6920713b23e
 
 <1>在C++中有两种注释：单行注释和界定符对注释。
 单行注释以双斜线`//`开始，以换行符结束。
@@ -203,11 +187,7 @@ int main()
 
 可以看到，`/*`和`*/`一一对应。
 
-<<<<<<< HEAD
 #### 1.4 控制流
-=======
-> 1.4 控制流
->>>>>>> fdd0b990143e5fb1431d47a01994b6920713b23e
 
 1.while语句形式为
 
@@ -245,15 +225,9 @@ else statement;
 
 它的意思是：先执行表达式1,如果1为真则执行表达式2，否则执行表达式3，三目运算符常常用来代替if .... else....语句。
 
-<<<<<<< HEAD
 ### **Chapter.2 变量和基本类型**
 
 #### 2.1 基本内置类型
-=======
-> **Chapter.2 变量和基本类型**
->
-> 2.1 基本内置类型
->>>>>>> fdd0b990143e5fb1431d47a01994b6920713b23e
 
 1.算术类型
 
@@ -276,13 +250,9 @@ else statement;
 
 （2）类型int、short、long和long long带符号，可以加unsigned得到无符号类型。char可表示signed char或unsigned char，具体由编译器决定。
 
-<<<<<<< HEAD
 ---
 
 > Sep.18,2022
-=======
-### Sep.18 Chapter.2
->>>>>>> fdd0b990143e5fb1431d47a01994b6920713b23e
 
 #### 2-2 变量和基本类型
 
