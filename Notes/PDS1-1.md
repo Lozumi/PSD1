@@ -119,14 +119,14 @@ git config --global --unset https.https://github.com.proxy
 
 #### 1.3 注释简介
 
-<1>在C++中有两种注释：单行注释和界定符对注释。
+1.在C++中有两种注释：单行注释和界定符对注释。
 单行注释以双斜线`//`开始，以换行符结束。
 注释界定符继承自C，以`/*`开始，`*/`结束。注意，当注释界定跨越多行时，约定显式指出其内部的程序航都属于多行注释的一部分，一般在注释内的每一行以星号开头。
 
 注释界定符不能嵌套。
 示例：
 
-```
+```cpp
 // 这是一个单行注释
 /*
  * 这是一个多行注释。
@@ -136,7 +136,7 @@ git config --global --unset https.https://github.com.proxy
 
 > 练习1.7
 
-```
+```cpp
 int main()
 {
     //听说可以嵌套注释？
@@ -165,7 +165,7 @@ E:\CS Proj\PSD1\Codes\CPPP\Chapter.1\E1.7.cpp:9:5: error: expected primary-expre
 
 > 练习1.8
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -191,21 +191,21 @@ int main()
 
 1.while语句形式为
 
-```
+```cpp
 while (condition)
 	statement
 ```
 
 2.for语句形式为
 
-```
+```cpp
 for (init-statement;condition;expression)
 	statement
 ```
 
 3.if语句形式为
 
-```
+```cpp
 if (condition)
 	statement;
 else if (condition)
@@ -219,7 +219,7 @@ else statement;
 
 另外，C++中有三目运算符，形式为
 
-```
+```cpp
 <表达式1>？<表达式2> ：<表达式3>
 ```
 
@@ -312,7 +312,7 @@ else statement;
 
 引用类型引用另一种类型。它不是对象，没有地址，因此不能定义引用的引用。引用必须初始化，并将永远和其初始化对象绑定。
 
-```
+```cpp
 int ival = 1024;
 int &refVal = ival; //定义refVal为指向整型ival的引用
 ```
@@ -323,7 +323,7 @@ int &refVal = ival; //定义refVal为指向整型ival的引用
 
 允许使用解引用符来访问指针指向的对象。
 
-```
+```cpp
 double dval;
 double *dp = &dval; //定义dp为指向双浮点dval的指针
 *dp = *dp * *dp //*dp等效于dval
@@ -333,7 +333,7 @@ double *dp = &dval; //定义dp为指向双浮点dval的指针
 
 涉及指针或引用的声明时的**不同的定义写法**如下：
 
-```
+```cpp
 //把修饰符和变量标识符写在一起，强调变量的复合类型。
 int *p2,*p3;
 //把修饰符和类型名写在一起，强调声明了一个复合类型。
@@ -345,13 +345,13 @@ int* p4;
 
 **定义多个变量**
 
-```
+```cpp
 int *p1 = &val,p2 //p1为int*（即指向int的指针）,p2为int。
 ```
 
 **引用、指针和const的复合类型**
 
-```
+```cpp
 //指向指针的指针
 int **p5 = &p4;
 
@@ -378,7 +378,7 @@ const int *const cp2 = &cval; //cp2是指向整型常量的常量指针
 
 const分为顶层const和底层const，顶层const可以表示任意的对象（如指针）是常量，而底层const则与指针和引用等复合类型的基本类型部分有关（如表示指针所指向的对象是一个常量）。
 
-```
+```cpp
 int *const p1; //顶层
 const int ci; //顶层
 const int *p2; //底层
@@ -392,11 +392,10 @@ const int *const p3; //左底层，右顶层
 
 进行对象的拷贝时，顶层const没有影响（对其本身无改变）；底层const类型必须相同，或者两个对象的数据类型可以转换（**一般地，非常量可以转换为常量，常量不可转换为非常量**）。
 
-```
+```cpp
 int *p = p3; //错误。p指向一个整型，而p3指向一个整型常量，两个对象的底层const不同。
 
 int i = 0;
 p2 = &i; //正确。i是一个整型，而p2指向整型常量，int*能转化为const int*。
 
 int &r = ci; //错误。int&不能转换为const int&，故无法绑定到int上。
-```
