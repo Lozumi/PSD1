@@ -6,7 +6,7 @@ int main()
 {
     string str;
     int sum;
-    for (int a = 1; a <= 1000; a++)
+    for (int a = 2; a <= 1000; a++)
     {
         sum = 0;
         bool isFT = 1;

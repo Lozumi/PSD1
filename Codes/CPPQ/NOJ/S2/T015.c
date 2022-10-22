@@ -4,20 +4,20 @@
 
 int main()
 {
-    int n;
+    int num = 0, n = 0;
     int i, j;
     int a[100000] = {1};
-    scanf("%d", &n);
+    scanf("%d %d", &num, &n);
     if (n == 0)
     {
         printf("0\n");
-        exit(0);
+        return 0;
     }
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < 100000; j++)
         {
-            a[j] *= 2;
+            a[j] *= num;
         }
         for (j = 0; j < 100000; j++)
         {
@@ -28,16 +28,19 @@ int main()
             }
         }
     }
-    for (i = 99999; i >= 0; i--)
+    //    for (i = 99999; i >= 0; i--)
+    for (i = 2; i >= 0; i--)
     {
-        if (a[i] != 0)
-        {
-            for (j = i; j >= 0; j--)
-            {
-                printf("%d", a[j]);
-            }
-            break;
-        }
+        printf("%d", a[i]);
+        //        if (a[i] != 0)
+        //        {
+        //            for (j = i; j >= 0; j--)
+        //            {
+        // printf("%d", a[j]);
+        //            }
+        //            break;
+        //        }
     }
     printf("\n");
+    return 0;
 }
