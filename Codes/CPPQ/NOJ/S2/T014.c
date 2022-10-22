@@ -8,7 +8,8 @@ int main(void)
 {
     long n = 0, bit = 0;
     scanf("%d", &n);
-    bit = Bit_Int_2(n);
+    n = abs(n);
+    bit = Bit_Int_1(n);
     printf("%d", bit);
     return 0;
 }
@@ -16,8 +17,8 @@ int main(void)
 int Bit_Int_1(long n) //法1
 {
     int bit = 0;
-    if (n == 0)
-        return 1;
+    if (n / 10 == 0)
+        return 0;
     while (n)
     {
         bit++;
