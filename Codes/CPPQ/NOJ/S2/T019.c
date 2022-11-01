@@ -1,22 +1,29 @@
 // NOJ T019
 #include <stdio.h>
 
-int add(int x, int y);
-extern int a = 0, b = 0;
+double add(void);
+double x = 0, y = 0;
 
 int main(void)
 {
-    int sum = 0;
-    a = 1;
-    b = 2;
+    double sum = 0;
+    x = 1;
+    y = 2;
     for (int i = 1; i <= 20; i++)
     {
-        sum = sum;
+        sum = sum + add();
     }
+    printf("%.6lf", sum);
     return 0;
 }
 
-int add(int x, int y)
+double add(void)
 {
-    return x + y;
+    double result = 0, temp = 0; // x 1 y 2
+    result = y / x;
+    x += y; // x 3 y 2
+    temp = y;
+    y = x;
+    x = temp; // x 2 y 3
+    return result;
 }
