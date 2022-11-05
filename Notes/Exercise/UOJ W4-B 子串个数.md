@@ -1,3 +1,5 @@
+> `西北工业大学ACM基地2022年大培训试题题解：第四周B题`
+
 # 子串个数
 
 ## 问题描述
@@ -20,15 +22,15 @@ S均由小写字母组成
 
 输出为1个整数
 
-#### 输入样例 1 
+#### 输入样例 1
 
-```c
+```
 ababc
 ```
 
 #### 输出样例 1
 
-```c
+```
 2
 ```
 
@@ -38,13 +40,9 @@ ababc
 
 出现次数分别是2 2 1 2 1 1 1 1 1 1 1 1
 
-
-
 ## 题解
 
-#### 思路
-
-**常规思路**
+#### 解法1
 
 遍历总字符串的所有子串，并分别计数。最后取其中最大的次数输出。
 
@@ -52,16 +50,78 @@ ababc
 
 A题使用了思路一，故本题使用思路二。
 
-**优化思路**
+**源代码**
+
+```cpp
+// UOJ W4-B-1
+#include <iostream>
+#include <vector>
+#include <string>
+//#include <ctime>
+
+using namespace std;
+
+int main(void)
+{
+    // int t1 = clock();
+    string sMain, sVice, sViceNow;
+    int sumNow = 0, sumMax = 0;
+    bool flagS = 0;
+    vector<char> sVMain;
+    //读取总字符串
+    cin >> sMain;
+    for (auto i : sMain)
+    {
+        sVMain.push_back(i);
+    }
+    //遍历创建子串
+    int nMain = sVMain.size();       //查询总字符串长度
+    for (int i = 1; i <= nMain; i++) //固定子串长度(步长)i
+    {
+        for (int j = 0; j <= nMain - i; j++) //确定开始位置j
+        {
+            sVice = "";
+            for (int k = j; k <= j + i - 1; k++) //从确定位置进行固定长度的遍历  j~j+i-1
+            {
+                sVice.push_back(sVMain[k]); //字符读入字符串
+            }
+
+            //已经创建子串，随后计数
+            sumNow = 0;
+            for (int l = 0; l <= nMain - i; l++) //遍历固定步长的所有子串
+            {
+                sViceNow = "";
+                for (int m = l; m <= l + i - 1; m++)
+                {
+                    sViceNow.push_back(sVMain[m]);
+                }
+                if (sVice == sViceNow)
+                {
+                    sumNow++;
+                }
+            }
+            if (sumNow >= sumMax)
+                sumMax = sumNow;
+        }
+    }
+    cout << sumMax << endl;
+    // int t2 = clock();
+    // cout << t2 - t1 << endl;
+    return 0;
+}
+```
+
+#### 解法2
 
 引入string类，使用`substr`函数提取子串。由此不再使用动态数组，直接使用字符串操作。
 
 用法为`int i = string.str(start_place,length)`。
 
-#### 源代码
+**源代码**
+
 
 ```cpp
-// UOJ W4-B
+// UOJ W4-B-2
 //引入string类函数代替手写轮子
 #include <iostream>
 #include <string>
@@ -105,4 +165,3 @@ int main(void)
     return 0;
 }
 ```
-
