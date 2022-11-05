@@ -1,4 +1,4 @@
-> `西北工业大学ACM基地2022年大培训试题题解：第四周B题`
+> 西北工业大学ACM基地2022年大培训试题题解：第四周B题
 
 # 子串个数
 
@@ -111,6 +111,10 @@ int main(void)
 }
 ```
 
+**分析**
+
+空间复杂度为$O\left(n^{2}\right)$，样例执行时间`1671ms`。太慢了~
+
 #### 解法2
 
 引入string类，使用`substr`函数提取子串。由此不再使用动态数组，直接使用字符串操作。
@@ -118,7 +122,6 @@ int main(void)
 用法为`int i = string.str(start_place,length)`。
 
 **源代码**
-
 
 ```cpp
 // UOJ W4-B-2
@@ -165,3 +168,75 @@ int main(void)
     return 0;
 }
 ```
+
+**分析**
+
+空间复杂度为$O\left(n^{2}\right)$，样例执行时间`1085ms`。还是太慢了~
+
+#### 解法3
+
+引理：一个字符串出现的次数不会比他的子串多。
+
+故只需统计字符出现个数，并输出最大者。将26个字母的次数用数组记录，并快速排序得到最大者。
+
+```cpp
+// UOJ W4-B-3
+//简化为字符数量统计
+#include <iostream>
+#include <string>
+//#include <ctime>
+
+using namespace std;
+void quick_sort(int a[], int l, int r);
+
+int main(void)
+{
+    // int t1 = clock();
+
+    string str;
+    getline(cin, str);
+    // transform(str.begin(), str.end(), str.begin(), ::tolower); //将所有字母转为小写
+
+    int cnt[26] = {};
+    for (int i = 0; i < str.size(); i++)
+    {
+        cnt[(int)str[i] - 'a']++;
+    }
+    quick_sort(cnt, 0, 25);
+    cout << cnt[25] << endl;
+
+    // int t2 = clock();
+    // cout << t2 - t1 << endl;
+    return 0;
+}
+
+void quick_sort(int a[], int l, int r)
+{
+    if (l < r)
+    {
+        int i, j, x;
+
+        i = l;
+        j = r;
+        x = a[i];
+        while (i < j)
+        {
+            while (i < j && a[j] > x)
+                j--; // 从右向左找第一个小于x的数
+            if (i < j)
+                a[i++] = a[j];
+            while (i < j && a[i] < x)
+                i++; // 从左向右找第一个大于x的数
+            if (i < j)
+                a[j--] = a[i];
+        }
+        a[i] = x;
+        quick_sort(a, l, i - 1); /* 递归调用 */
+        quick_sort(a, i + 1, r); /* 递归调用 */
+    }
+}
+```
+
+**分析**
+
+空间复杂度为$O\left(nlogn\right)$，样例执行时间`568ms`。成功辣！

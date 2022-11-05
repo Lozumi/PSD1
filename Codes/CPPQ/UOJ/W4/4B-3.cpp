@@ -2,14 +2,14 @@
 //简化为字符数量统计
 #include <iostream>
 #include <string>
-//#include <ctime>
+#include <ctime>
 
 using namespace std;
 void quick_sort(int a[], int l, int r);
 
 int main(void)
 {
-    // int t1 = clock();
+    int t1 = clock();
 
     string str;
     getline(cin, str);
@@ -23,8 +23,8 @@ int main(void)
     quick_sort(cnt, 0, 25);
     cout << cnt[25] << endl;
 
-    // int t2 = clock();
-    // cout << t2 - t1 << endl;
+    int t2 = clock();
+    cout << t2 - t1 << endl;
     return 0;
 }
 
