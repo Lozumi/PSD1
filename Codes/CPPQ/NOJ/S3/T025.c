@@ -11,7 +11,7 @@ int main(void)
     {
         for (int i = m; i <= n; i++)
         {
-            sum = sum + 1.0 / (i * i);
+            sum = sum + 1.0 / i / i; // i*i会产生数据溢出。
         }
         printf("%.5lf", sum);
     }
