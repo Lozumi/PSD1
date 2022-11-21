@@ -1,5 +1,5 @@
 // UOJ W2-B
-// NOJ T036
+// NOJ T036-a
 #include <iostream>
 #include <vector>
 using namespace std;
