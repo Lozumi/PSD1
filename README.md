@@ -1,2 +1,2 @@
 # PSD1
-A repo for C++ learning.
+A repo for C & C++ learning.
