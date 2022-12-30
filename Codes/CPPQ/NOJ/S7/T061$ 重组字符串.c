@@ -22,7 +22,7 @@ int main()
     char s[100], p[100], *a;
     int i;
     a = p;
-    gets(s);
+    scanf("%[^\n]%*c", s);
     fun(s, a);
     for (i = 0; i < h; i++)
         printf("%c", p[i]);
