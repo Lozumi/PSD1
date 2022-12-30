@@ -5,7 +5,7 @@ int main()
 {
     char s[1000], b[1000][1000];
     int i, n, j, h = 0, m;
-    gets(s);
+    scanf("%[^\n]%*c", s);
     n = strlen(s);
     for (i = 0; i < n; i++)
     {

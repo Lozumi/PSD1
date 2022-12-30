@@ -9,7 +9,7 @@ int main()
 {
     char s[100], a;
     int n, i, k;
-    gets(s);
+    scanf("%[^\n]%*c", s);
     n = strlen(s);
     if (n % 2 == 0)
     {

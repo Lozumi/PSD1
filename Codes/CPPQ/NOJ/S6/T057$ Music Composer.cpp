@@ -1,4 +1,4 @@
-// NOJ T067 Music
+// NOJ T057 Music Composer
 #include <iostream>
 #include <stdio.h>
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     char S[10];
-    gets(S);
+    scanf("%[^\n]%*c", S);
     if (S[0] == 'A' && S[1] == '#')
     {
         S[0] = 'B', S[1] = 'b';

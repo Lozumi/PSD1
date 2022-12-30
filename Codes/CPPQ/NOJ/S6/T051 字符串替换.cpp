@@ -1,4 +1,4 @@
-// NOJ T061 字符串替换
+// NOJ T051 字符串替换
 #include <iostream>
 #include <vector>
 

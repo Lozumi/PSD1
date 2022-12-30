@@ -13,8 +13,8 @@ void bijiao(char *a, char *b)
 int main()
 {
     char a[80], b[80];
-    gets(a);
-    gets(b);
+    scanf("%[^\n]%*c", a);
+    scanf("%[^\n]%*c", b);
     bijiao(a, b);
     return 0;
 }
