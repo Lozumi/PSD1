@@ -1,3 +1,4 @@
+// NOJ T099 Favorite Number
 #include <stdio.h>
 #include <string.h>
 
