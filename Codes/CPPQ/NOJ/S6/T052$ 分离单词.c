@@ -1,3 +1,4 @@
+// NOJ T052 分离单词.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
