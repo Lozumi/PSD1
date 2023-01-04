@@ -1,3 +1,4 @@
+// NOJ T092 似乎有点问题
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
