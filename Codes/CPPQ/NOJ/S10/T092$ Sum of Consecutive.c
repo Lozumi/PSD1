@@ -4,10 +4,12 @@
 #include <string.h>
 int len[64], n, minlen, get;
 int b[64];
+
 int cmp(const void *a, const void *b)
 {
     return *(int *)a < *(int *)b ? 1 : -1;
 }
+
 int dfs(int nowlen, int nowget, int cnt)
 {
     if (cnt >= n)
@@ -41,6 +43,7 @@ int dfs(int nowlen, int nowget, int cnt)
     }
     return 0;
 }
+
 int main()
 {
     int i, tollen, q = 0, c[100];
